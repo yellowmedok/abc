@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №7</title>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--  jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+    <!-- стилі jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- owl сarousel js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <!-- magnific popup js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- custom script -->
+    <script src="scripts/scipt.js"></script> <!-- link to js file -->
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<style>
+    body {
+        margin: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+    }
+
+    #slider_value {
+        width: 200px;
+        margin: 40px 0;
+    }
+
+    #gender_menu {
+        width: 200px;
+        margin: 40px 0;
+    }
+
+    #sortable { list-style-type: none; margin: 20; padding: 0; width: 60%; }
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.2em; height: 25px; }
+    #sortable li span { position: absolute; margin-left: -1.3em; }
+</style>
+
+<body>
+
+    <!-- слайдер для вибору віку -->
+    <p>оберіть свій вік: <span id="slider_value">0</span></p>
+    <div id="slider"></div>
+
+    <!-- випадне меню для вибору статі -->
+    <p>вкажіть вашу стать</p>
+    <select id="gender_menu">
+        <option value="male">чоловіча</option>
+        <option value="female">жіноча</option>
+        <option value="other">інша</option>
+    </select>
+    
+    <!-- кнопка для підтвердження -->
+    <button id="submit">підтвердити</button>
+
+    <!-- елемент для виведення результату -->
+    <p id="result"></p>
+
+    <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>обʼєкт 7</li>
+    </ul>
+    
+    <!-- owl Carousel -->
+    <div class="owl-carousel">
+        <div><img src="images/photo_airplane.jpeg" alt="Slide 1"></div>
+        <div><img src="images/photo_aligator.jpeg" alt="Slide 2"></div>
+        <div><img src="images/photo_mosque.jpeg" alt="Slide 3"></div>
+        <div><img src="images/photo_museum.jpeg" alt="Slide 4"></div>
+        <div><img src="images/photo_streetfood.jpeg" alt="Slide 5"></div>
+    </div>
+
+    <!-- image gallery -->
+    <div class="gallery">
+        <a href="images/photo_airplane.jpeg" class="popup-link">
+            <img src="images/photo_airplane.jpeg" alt="Airplane" width="200">
+        </a>
+        <a href="images/photo_aligator.jpeg" class="popup-link">
+            <img src="images/photo_aligator.jpeg" alt="Aligator" width="200">
+        </a>
+        <a href="images/photo_mosque.jpeg" class="popup-link">
+            <img src="images/photo_mosque.jpeg" alt="Mosque" width="200">
+        </a>
+        <a href="images/photo_uliana.jpg" class="popup-link">
+            <img src="images/photo_uliana.jpg" alt="" width="200">
+        </a>
+        <a href="images/photo_ararat.jpeg" class="popup-link">
+            <img src="images/photo_ararat.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_mosque1.jpeg" class="popup-link">
+            <img src="images/photo_mosque1.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_uaz.jpeg" class="popup-link">
+            <img src="images/photo_uaz.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_slavsko.jpeg" class="popup-link">
+            <img src="images/photo_slavsko.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_chinafood.jpeg" class="popup-link">
+            <img src="images/photo_chinafood.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_icecream.jpeg" class="popup-link">
+            <img src="images/photo_icecream.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_vomit.jpeg" class="popup-link">
+            <img src="images/photo_vomit.jpeg" alt="" width="200">
+        </a>
+        <a href="images/photo_brunei.jpeg" class="popup-link">
+            <img src="images/photo_brunei.jpeg" alt="" width="200">
+        </a>
+    </div>
+
+</body>
+</html>
